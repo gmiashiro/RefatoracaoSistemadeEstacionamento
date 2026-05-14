@@ -31,6 +31,7 @@ public class TicketEstacionamento {
 
     public void imprimirTicket() {
         LocalDateTime entrada = dataHoraEntrada;
+        LocalDateTime saida = dataHoraSaidaPrevista;
 
         String entradaFormatada = entrada.getDayOfMonth() + "/"
                 + entrada.getMonthValue() + "/"
@@ -38,10 +39,18 @@ public class TicketEstacionamento {
                 + entrada.getHour() + ":"
                 + String.format("%02d", entrada.getMinute());
 
+        String saidaFormatada = saida.getDayOfMonth() + "/"
+                + saida.getMonthValue() + "/"
+                + saida.getYear() + " "
+                + saida.getHour() + ":"
+                + String.format("%02d", saida.getMinute());
+
+
         System.out.println("Ticket: " + codigo);
         System.out.println("Veículo: " + veiculo.getPlaca());
         System.out.println("Vaga: " + vaga.getCodigo());
-        System.out.println("Entrada: " + entradaFormatada);
+        System.out.println("Entrada registrada: " + entradaFormatada);
+        System.out.println("Saída prevista: " + saidaFormatada);
 
         if (entrada.getDayOfWeek() == DayOfWeek.SATURDAY
                 || entrada.getDayOfWeek() == DayOfWeek.SUNDAY
