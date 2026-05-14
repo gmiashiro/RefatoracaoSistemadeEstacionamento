@@ -12,16 +12,25 @@ public class TicketEstacionamento {
     private Veiculo veiculo;
     private Vaga vaga;
     private boolean perdido;
+    private LocalDateTime dataHoraEntrada;
+    private LocalDateTime dataHoraSaidaPrevista;
 
-    public TicketEstacionamento(String codigo, Veiculo veiculo, Vaga vaga, boolean perdido) {
+    public TicketEstacionamento(String codigo,
+                                Veiculo veiculo,
+                                Vaga vaga,
+                                boolean perdido,
+                                LocalDateTime dataHoraEntrada,
+                                LocalDateTime dataHoraSaidaPrevista) {
         this.codigo = codigo;
         this.veiculo = veiculo;
         this.vaga = vaga;
         this.perdido = perdido;
+        this.dataHoraEntrada = dataHoraEntrada;
+        this.dataHoraSaidaPrevista = dataHoraSaidaPrevista;
     }
 
     public void imprimirTicket() {
-        LocalDateTime entrada = veiculo.getDataHoraEntrada();
+        LocalDateTime entrada = dataHoraEntrada;
 
         String entradaFormatada = entrada.getDayOfMonth() + "/"
                 + entrada.getMonthValue() + "/"
@@ -67,10 +76,10 @@ public class TicketEstacionamento {
     }
 
     public LocalDateTime getDataHoraEntrada() {
-        return veiculo.getDataHoraEntrada();
+        return dataHoraEntrada;
     }
 
     public LocalDateTime getDataHoraSaidaPrevista() {
-        return veiculo.getDataHoraSaidaPrevista();
+        return dataHoraSaidaPrevista;
     }
 }

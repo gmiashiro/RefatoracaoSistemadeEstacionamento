@@ -1,31 +1,22 @@
 package src.automoveis;
 
-import java.time.LocalDateTime;
-
 public class Veiculo {
 
     private String placa;
     private String modelo;
     private String cor;
 
-    private LocalDateTime dataHoraEntrada;
-    private LocalDateTime dataHoraSaidaPrevista;
-
     private Seguro seguro;
 
     public Veiculo(String placa,
                    String modelo,
                    String cor,
-                   LocalDateTime dataHoraEntrada,
-                   LocalDateTime dataHoraSaidaPrevista,
                    String seguradora,
                    String numeroApolice,
                    String telefoneAssistencia) {
         this.placa = placa;
         this.modelo = modelo;
         this.cor = cor;
-        this.dataHoraEntrada = dataHoraEntrada;
-        this.dataHoraSaidaPrevista = dataHoraSaidaPrevista;
         this.seguro = new Seguro(seguradora, numeroApolice, telefoneAssistencia);
     }
 
@@ -33,8 +24,6 @@ public class Veiculo {
         System.out.println("Veículo: " + modelo);
         System.out.println("Placa: " + placa);
         System.out.println("Cor: " + cor);
-        System.out.println("Entrada registrada: " + dataHoraEntrada);
-        System.out.println("Saída prevista: " + dataHoraSaidaPrevista);
         System.out.println("Seguro: " + seguro.getDadosSeguroFormatados());
     }
 
@@ -48,14 +37,6 @@ public class Veiculo {
 
     public String getCor() {
         return cor;
-    }
-
-    public LocalDateTime getDataHoraEntrada() {
-        return dataHoraEntrada;
-    }
-
-    public LocalDateTime getDataHoraSaidaPrevista() {
-        return dataHoraSaidaPrevista;
     }
 
     public String getDadosSeguroFormatados(){
