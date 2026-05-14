@@ -14,6 +14,22 @@ public class Vaga {
         this.ocupada = ocupada;
     }
 
+    public String descreverStatus() {
+        if (this.ocupada && this.coberta) {
+            return "ocupada e coberta";
+        }
+
+        if (this.ocupada) {
+            return "ocupada";
+        }
+
+        if (this.coberta) {
+            return "livre e coberta";
+        }
+
+        return "livre";
+    }
+
     public String getCodigo() {
         return codigo;
     }

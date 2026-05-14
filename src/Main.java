@@ -4,7 +4,6 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import src.automoveis.Veiculo;
 import src.clientes.Cliente;
-import src.logisiticaEstacionamento.PainelVagas;
 import src.logisiticaEstacionamento.ReservaVaga;
 import src.logisiticaEstacionamento.TicketEstacionamento;
 import src.logisiticaEstacionamento.estacionamento.Estacionamento;
@@ -51,14 +50,11 @@ public class Main {
                 true);
 
         TicketEstacionamento ticket = new TicketEstacionamento("TCK-1001", veiculo, vaga, false,
-                                                               LocalDateTime.of(2026, 6, 20, 9, 30),
-                                                               LocalDateTime.of(2026, 6, 20, 12, 15));
+                LocalDateTime.of(2026, 6, 20, 9, 30),
+                LocalDateTime.of(2026, 6, 20, 12, 15));
         ReservaVaga reserva = new ReservaVaga(vaga, cliente,"Mariana Souza",
-                                              LocalDateTime.of(2026, 6, 20, 9, 0));
+                LocalDateTime.of(2026, 6, 20, 9, 0));
         RegistroPagamento pagamento = new RegistroPagamento(ticket, cliente, new BigDecimal("48.5"));
-        OperacaoEstacionamento operacao = new OperacaoEstacionamento();
-        CentralClientes centralClientes = new CentralClientes();
-        PainelVagas painelVagas = new PainelVagas();
 
         estacionamento.imprimirDados();
         System.out.println();
@@ -75,9 +71,9 @@ public class Main {
         reserva.imprimirReserva();
         System.out.println();
 
-        System.out.println("Minutos de permanência: " + operacao.calcularMinutosPermanencia(ticket));
-        System.out.println("Desconto do cliente: " + centralClientes.calcularDescontoCliente(cliente) + "%");
-        System.out.println("Status da vaga: " + painelVagas.descreverStatus(vaga));
+        System.out.println("Minutos de permanência: " + ticket.calcularMinutosPermanencia());
+        System.out.println("Desconto do cliente: " + cliente.calcularDescontoCliente() + "%");
+        System.out.println("Status da vaga: " + vaga.descreverStatus());
         System.out.println();
 
         pagamento.imprimirComprovante();
