@@ -1,4 +1,6 @@
-package src;
+package src.logisiticaEstacionamento.estacionamento;
+
+import src.logisiticaEstacionamento.TicketEstacionamento;
 
 import java.time.Duration;
 
