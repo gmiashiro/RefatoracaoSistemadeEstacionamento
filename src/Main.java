@@ -9,7 +9,6 @@ import src.logisiticaEstacionamento.PainelVagas;
 import src.logisiticaEstacionamento.ReservaVaga;
 import src.logisiticaEstacionamento.TicketEstacionamento;
 import src.logisiticaEstacionamento.estacionamento.Estacionamento;
-import src.logisiticaEstacionamento.estacionamento.OperacaoEstacionamento;
 import src.logisiticaEstacionamento.estacionamento.RegistroPagamento;
 import src.logisiticaEstacionamento.estacionamento.Vaga;
 

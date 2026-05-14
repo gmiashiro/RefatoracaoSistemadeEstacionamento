@@ -4,6 +4,7 @@ import src.logisiticaEstacionamento.estacionamento.Vaga;
 import src.automoveis.Veiculo;
 
 import java.time.DayOfWeek;
+import java.time.Duration;
 import java.time.LocalDateTime;
 
 public class TicketEstacionamento {
@@ -66,6 +67,12 @@ public class TicketEstacionamento {
         } else {
             System.out.println("Situação: ticket regular");
         }
+    }
+
+    public long calcularMinutosPermanencia() {
+        return Duration.between(
+                this.dataHoraEntrada,
+                this.dataHoraSaidaPrevista).toMinutes();
     }
 
     public String getCodigo() {
