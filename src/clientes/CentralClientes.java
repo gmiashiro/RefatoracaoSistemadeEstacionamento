@@ -1,4 +1,4 @@
-package src;
+package src.clientes;
 
 public class CentralClientes {
 

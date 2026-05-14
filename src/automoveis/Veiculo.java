@@ -58,4 +58,20 @@ public class Veiculo {
         return dataHoraSaidaPrevista;
     }
 
+    public String getDadosSeguroFormatados(){
+        return seguro.getDadosSeguroFormatados();
+    }
+
+    public String getSeguradora() {
+        return seguro.getSeguradora();
+    }
+
+    public String getNumeroApolice() {
+        return seguro.getNumeroApolice();
+    }
+
+    public String getTelefoneAssistencia() {
+        return seguro.getTelefoneAssistencia();
+    }
+
 }

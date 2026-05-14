@@ -3,6 +3,8 @@ package src;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import src.automoveis.Veiculo;
+import src.clientes.CentralClientes;
+import src.clientes.Cliente;
 
 public class Main {
 
