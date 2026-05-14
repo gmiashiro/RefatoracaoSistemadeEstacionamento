@@ -1,4 +1,6 @@
-package src;
+package src.logisiticaEstacionamento;
+
+import src.logisiticaEstacionamento.estacionamento.Vaga;
 
 public class PainelVagas {
 

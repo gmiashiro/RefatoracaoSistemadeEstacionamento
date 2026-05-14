@@ -1,5 +1,6 @@
-package src;
+package src.logisiticaEstacionamento;
 
+import src.logisiticaEstacionamento.estacionamento.Vaga;
 import src.clientes.Cliente;
 
 public class ReservaVaga {

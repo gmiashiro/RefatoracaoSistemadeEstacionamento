@@ -1,5 +1,6 @@
-package src;
+package src.logisiticaEstacionamento.estacionamento;
 
+import src.logisiticaEstacionamento.TicketEstacionamento;
 import src.clientes.Cliente;
 
 import java.math.BigDecimal;

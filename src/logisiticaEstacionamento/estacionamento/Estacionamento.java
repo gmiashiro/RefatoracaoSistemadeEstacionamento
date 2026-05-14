@@ -1,4 +1,4 @@
-package src;
+package src.logisiticaEstacionamento.estacionamento;
 
 public class Estacionamento {
 
