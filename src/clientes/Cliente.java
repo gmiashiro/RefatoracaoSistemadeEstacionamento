@@ -27,9 +27,9 @@ public class Cliente {
         this.mesesComoCliente = mesesComoCliente;
         this.mensalista = mensalista;
         this.cobrancaCliente = new CobrancaCliente(banco,
-                                                   agencia,
-                                                   conta,
-                                                   metodoPagamentoPreferencial);
+                agencia,
+                conta,
+                metodoPagamentoPreferencial);
     }
 
     public void imprimirResumo() {
@@ -39,6 +39,22 @@ public class Cliente {
         System.out.println("Pontos de fidelidade: " + pontosFidelidade);
         System.out.println("Mensalista: " + mensalista);
         System.out.println("Cobrança: " + getDadosCobrancaFormatados());
+    }
+
+    public int calcularDescontoCliente() {
+        if (this.mensalista && this.pontosFidelidade >= 4000) {
+            return 20;
+        }
+
+        if (this.mesesComoCliente >= 12 && this.pontosFidelidade >= 2000) {
+            return 10;
+        }
+
+        if (this.pontosFidelidade >= 1000) {
+            return 5;
+        }
+
+        return 0;
     }
 
     public String getDadosCobrancaFormatados() {

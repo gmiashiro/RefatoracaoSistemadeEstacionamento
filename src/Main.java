@@ -3,7 +3,6 @@ package src;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import src.automoveis.Veiculo;
-import src.clientes.CentralClientes;
 import src.clientes.Cliente;
 import src.logisiticaEstacionamento.PainelVagas;
 import src.logisiticaEstacionamento.ReservaVaga;
