@@ -4,37 +4,43 @@ public class Estacionamento {
 
     private String nome;
     private String cnpj;
+    private EnderecoEstacionamento enderecoEstacionamento;
 
-    private String rua;
-    private String numero;
-    private String bairro;
-    private String cidade;
-    private String estado;
-    private String cep;
-
-    public Estacionamento(String nome, String cnpj, String rua, String numero,
-                          String bairro, String cidade, String estado, String cep) {
+    public Estacionamento(String nome,
+                          String cnpj,
+                          String rua,
+                          String numero,
+                          String bairro,
+                          String cidade,
+                          String estado,
+                          String cep) {
         this.nome = nome;
         this.cnpj = cnpj;
-        this.rua = rua;
-        this.numero = numero;
-        this.bairro = bairro;
-        this.cidade = cidade;
-        this.estado = estado;
-        this.cep = cep;
+        this.enderecoEstacionamento = new EnderecoEstacionamento(rua,
+                                                                 numero,
+                                                                 bairro,
+                                                                 cidade,
+                                                                 estado,
+                                                                 cep);
     }
 
     public void imprimirDados() {
         System.out.println("Estacionamento: " + nome);
         System.out.println("CNPJ: " + cnpj);
-        System.out.println("Endereço: " + rua + ", " + numero + " - " + bairro);
-        System.out.println("Cidade: " + cidade + " - " + estado);
-        System.out.println("CEP: " + cep);
+        System.out.println("Endereço: "
+                            + enderecoEstacionamento.getRua()
+                            + ", "
+                            + enderecoEstacionamento.getNumero()
+                            + " - "
+                            + enderecoEstacionamento.getBairro());
+        System.out.println("Cidade: "
+                            + enderecoEstacionamento.getCidade()
+                            + " - "
+                            + enderecoEstacionamento.getEstado());
+        System.out.println("CEP: "
+                            + enderecoEstacionamento.getCep());
     }
 
-    public String getEnderecoCompleto() {
-        return rua + ", " + numero + " - " + bairro + ", " + cidade + " - " + estado + ", " + cep;
-    }
 
     public String getNome() {
         return nome;
@@ -42,5 +48,33 @@ public class Estacionamento {
 
     public String getCnpj() {
         return cnpj;
+    }
+
+    public String getEnderecoCompleto(){
+        return enderecoEstacionamento.getEnderecoCompleto();
+    }
+
+    public String getRua() {
+        return enderecoEstacionamento.getRua();
+    }
+
+    public String getNumero() {
+        return enderecoEstacionamento.getNumero();
+    }
+
+    public String getBairro() {
+        return enderecoEstacionamento.getBairro();
+    }
+
+    public String getCidade() {
+        return enderecoEstacionamento.getCidade();
+    }
+
+    public String getEstado() {
+        return enderecoEstacionamento.getEstado();
+    }
+
+    public String getCep() {
+        return enderecoEstacionamento.getCep();
     }
 }
