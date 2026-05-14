@@ -2,23 +2,28 @@ package src.logisiticaEstacionamento;
 
 import src.logisiticaEstacionamento.estacionamento.Vaga;
 import src.clientes.Cliente;
+import java.time.LocalDateTime;
 
 public class ReservaVaga {
 
     private Vaga vaga;
     private Cliente cliente;
+    private String nomeClienteReserva;
+    private LocalDateTime horarioReserva;
 
-    public ReservaVaga(Vaga vaga, Cliente cliente) {
+    public ReservaVaga(Vaga vaga, Cliente cliente, String nomeClienteReserva, LocalDateTime horarioReserva) {
         this.vaga = vaga;
         this.cliente = cliente;
+        this.nomeClienteReserva = nomeClienteReserva;
+        this.horarioReserva = horarioReserva;
     }
 
     public void imprimirReserva() {
         System.out.println("Reserva da vaga: " + vaga.getCodigo());
         System.out.println("Setor: " + vaga.getSetor());
-        System.out.println("Cliente da reserva: " + vaga.getNomeClienteReserva());
+        System.out.println("Cliente da reserva: " + nomeClienteReserva);
         System.out.println("Cliente vinculado: " + cliente.getNome());
-        System.out.println("Horário da reserva: " + vaga.getHorarioReserva());
+        System.out.println("Horário da reserva: " + horarioReserva);
     }
 
     public Vaga getVaga() {
@@ -27,5 +32,13 @@ public class ReservaVaga {
 
     public Cliente getCliente() {
         return cliente;
+    }
+
+    public String getNomeClienteReserva() {
+        return nomeClienteReserva;
+    }
+
+    public LocalDateTime getHorarioReserva() {
+        return horarioReserva;
     }
 }
