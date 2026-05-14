@@ -1,5 +1,7 @@
 package src;
 
+import src.clientes.Cliente;
+
 public class ReservaVaga {
 
     private Vaga vaga;

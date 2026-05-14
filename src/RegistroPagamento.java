@@ -1,5 +1,7 @@
 package src;
 
+import src.clientes.Cliente;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 

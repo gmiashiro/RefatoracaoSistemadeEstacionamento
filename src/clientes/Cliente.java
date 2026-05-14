@@ -1,4 +1,4 @@
-package src;
+package src.clientes;
 
 public class Cliente {
 
@@ -8,25 +8,28 @@ public class Cliente {
     private int pontosFidelidade;
     private int mesesComoCliente;
     private boolean mensalista;
+    private CobrancaCliente cobrancaCliente;
 
-    private String banco;
-    private String agencia;
-    private String conta;
-    private String metodoPagamentoPreferencial;
-
-    public Cliente(String nome, String cpf, String telefone,
-                   int pontosFidelidade, int mesesComoCliente, boolean mensalista,
-                   String banco, String agencia, String conta, String metodoPagamentoPreferencial) {
+    public Cliente(String nome,
+                   String cpf,
+                   String telefone,
+                   int pontosFidelidade,
+                   int mesesComoCliente,
+                   boolean mensalista,
+                   String banco,
+                   String agencia,
+                   String conta,
+                   String metodoPagamentoPreferencial) {
         this.nome = nome;
         this.cpf = cpf;
         this.telefone = telefone;
         this.pontosFidelidade = pontosFidelidade;
         this.mesesComoCliente = mesesComoCliente;
         this.mensalista = mensalista;
-        this.banco = banco;
-        this.agencia = agencia;
-        this.conta = conta;
-        this.metodoPagamentoPreferencial = metodoPagamentoPreferencial;
+        this.cobrancaCliente = new CobrancaCliente(banco,
+                                                   agencia,
+                                                   conta,
+                                                   metodoPagamentoPreferencial);
     }
 
     public void imprimirResumo() {
@@ -39,8 +42,7 @@ public class Cliente {
     }
 
     public String getDadosCobrancaFormatados() {
-        return banco + " | Agência " + agencia + " | Conta " + conta
-                + " | Método preferencial: " + metodoPagamentoPreferencial;
+        return cobrancaCliente.getDadosCobrancaFormatados();
     }
 
     public String getNome() {
@@ -68,18 +70,18 @@ public class Cliente {
     }
 
     public String getBanco() {
-        return banco;
+        return cobrancaCliente.getBanco();
     }
 
     public String getAgencia() {
-        return agencia;
+        return cobrancaCliente.getAgencia();
     }
 
     public String getConta() {
-        return conta;
+        return cobrancaCliente.getConta();
     }
 
     public String getMetodoPagamentoPreferencial() {
-        return metodoPagamentoPreferencial;
+        return cobrancaCliente.getMetodoPagamentoPreferencial();
     }
 }
