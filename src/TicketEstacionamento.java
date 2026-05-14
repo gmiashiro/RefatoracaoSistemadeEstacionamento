@@ -1,4 +1,6 @@
-package br.edu.refactoring.estacionamento;
+package src;
+
+import src.automoveis.Veiculo;
 
 import java.time.DayOfWeek;
 import java.time.LocalDateTime;

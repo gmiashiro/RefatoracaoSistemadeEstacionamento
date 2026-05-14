@@ -1,7 +1,8 @@
-package br.edu.refactoring.estacionamento;
+package src;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import src.automoveis.Veiculo;
 
 public class Main {
 

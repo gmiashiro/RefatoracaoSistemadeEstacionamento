@@ -1,4 +1,4 @@
-package br.edu.refactoring.estacionamento;
+package src;
 
 public class CentralClientes {
 
