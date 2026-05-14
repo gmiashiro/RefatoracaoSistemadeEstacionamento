@@ -1,5 +1,7 @@
 package src.automoveis;
 
+import src.logisiticaEstacionamento.TicketEstacionamento;
+
 public class Veiculo {
 
     private String placa;
@@ -7,6 +9,7 @@ public class Veiculo {
     private String cor;
 
     private Seguro seguro;
+    private TicketEstacionamento ticketEstacionamento;
 
     public Veiculo(String placa,
                    String modelo,
