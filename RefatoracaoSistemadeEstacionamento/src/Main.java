@@ -1,0 +1,82 @@
+package src;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import src.automoveis.Veiculo;
+import src.clientes.Cliente;
+import src.logisiticaEstacionamento.ReservaVaga;
+import src.logisiticaEstacionamento.TicketEstacionamento;
+import src.logisiticaEstacionamento.estacionamento.Estacionamento;
+import src.logisiticaEstacionamento.estacionamento.RegistroPagamento;
+import src.logisiticaEstacionamento.estacionamento.Vaga;
+import src.logisiticaEstacionamento.estacionamento.ValorMonetario;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Estacionamento estacionamento = new Estacionamento(
+                "ParkTech Centro",
+                "12.345.678/0001-90",
+                "Avenida Brasil",
+                "1500",
+                "Centro",
+                "Maringá",
+                "PR",
+                "87000-000");
+
+        Cliente cliente = new Cliente(
+                "Mariana Souza",
+                "123.456.789-00",
+                "(44) 99999-0000",
+                4200,
+                18,
+                true,
+                "Banco Acadêmico",
+                "1234",
+                "98765-0",
+                "Pix");
+
+        Veiculo veiculo = new Veiculo(
+                "ABC-1234",
+                "Honda Civic",
+                "Prata",
+                "Seguro Total",
+                "AP-889900",
+                "0800-123-456");
+
+        Vaga vaga = new Vaga(
+                "A12",
+                "Setor Azul",
+                true,
+                true);
+
+        TicketEstacionamento ticket = new TicketEstacionamento("TCK-1001", veiculo, vaga, false,
+                LocalDateTime.of(2026, 6, 20, 9, 30),
+                LocalDateTime.of(2026, 6, 20, 12, 15));
+        ReservaVaga reserva = new ReservaVaga(vaga, cliente,"Mariana Souza",
+                LocalDateTime.of(2026, 6, 20, 9, 0));
+        ValorMonetario valorDoTicket = new ValorMonetario(new BigDecimal("48.5"));
+        RegistroPagamento pagamento = new RegistroPagamento(ticket, cliente, valorDoTicket);
+        estacionamento.imprimirDados();
+        System.out.println();
+
+        cliente.imprimirResumo();
+        System.out.println();
+
+        veiculo.imprimirDados();
+        System.out.println();
+
+        ticket.imprimirTicket();
+        System.out.println();
+
+        reserva.imprimirReserva();
+        System.out.println();
+
+        System.out.println("Minutos de permanência: " + ticket.calcularMinutosPermanencia());
+        System.out.println("Desconto do cliente: " + cliente.calcularDescontoCliente() + "%");
+        System.out.println("Status da vaga: " + vaga.descreverStatus());
+        System.out.println();
+
+        pagamento.imprimirComprovante();
+    }
+}
